@@ -276,6 +276,7 @@ public class ImagePickerDelegate
 
   private void launchTakeVideoWithCameraIntent() {
     Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+    intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
     if (this.methodCall != null && this.methodCall.argument("maxDuration") != null) {
       int maxSeconds = this.methodCall.argument("maxDuration");
       intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, maxSeconds);
